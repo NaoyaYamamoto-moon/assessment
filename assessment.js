@@ -30,14 +30,34 @@ button.onclick=()=>{
   }
   //console.log(username);
   resultdiv.innerText='';
-  const header=document.createElement('h3');
-  header.innerText='診断結果';
-  resultdiv.appendChild(header);
+  // const header=document.createElement('h3');
+  // header.innerText='診断結果';
+  // resultdiv.appendChild(header);
+
+  // const paragraph=document.createElement('p');
+  // const result=assessment(username);
+  // paragraph.innerText=result;
+  // resultdiv.appendChild(paragraph);
+  
+  const headerdiv=document.createElement('div');
+  headerdiv.setAttribute('class', 'card-header text-bg-primary');
+  headerdiv.innerText='診断結果';
+
+  const bodydiv=document.createElement('div');
+  bodydiv.setAttribute('class', 'card-body');
 
   const paragraph=document.createElement('p');
+  paragraph.setAttribute('class', 'card-text');
   const result=assessment(username);
   paragraph.innerText=result;
-  resultdiv.appendChild(paragraph);
+  bodydiv.appendChild(paragraph);
+
+  resultdiv.setAttribute('class', 'card');
+
+  resultdiv.appendChild(headerdiv);
+  resultdiv.appendChild(bodydiv);
+  
+  
   const anchor=document.createElement('a');
   const href='https://twitter.com/intent/tweet?button_hashtag='+encodeURIComponent('いいとこ')+'&ref_src=twsrc%5Etfw';
   anchor.setAttribute('href',href);

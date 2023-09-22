@@ -1,0 +1,2 @@
+# assessment
+いいとこ診断
